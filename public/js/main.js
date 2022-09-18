@@ -9,7 +9,9 @@
             if (img_el && img_el.src) {
                 var link = document.createElement('a');
                 link.href = img_el.src;
-                link.download = 'easy-qrcode-download-' + Date.now() + '.png';
+                var filename = '';
+                if( img_el.getAttribute('data-file-name') ) filename = img_el.getAttribute('data-file-name');
+                link.download = filename + Date.now() + '.png';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);

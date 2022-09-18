@@ -4,7 +4,7 @@ Tags: qr, qrcode, qr code generator
 Requires at least: 5.0
 Tested Up to: 6.0
 Requires PHP: 7.0
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,10 @@ Generate custom and automatic site page URL QR codes.
 
 == Description ==
 Generate custom and automatic site page URL QR codes.
+
+Try Our Live Shortcode Generator
+<https://www.byvex.com/easy-qr-code-shortcode-generator/>
+
 
 == Installation ==
 
@@ -40,5 +44,8 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 
 == Changelog ==
 
-== 0.0.1 ==
+= 0.0.2 =
+* add download file rename parameter
+
+= 0.0.1 =
 * first release

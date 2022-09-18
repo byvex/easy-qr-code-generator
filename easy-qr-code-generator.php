@@ -4,7 +4,7 @@
  * Plugin Name: Easy QR Code Generator
  * Plugin URI: https://www.byvex.com/easy-qr-code-shortcode-generator/
  * Description: Generate custom and automatic site page URL QR codes.
- * Version: 0.0.1
+ * Version: 0.0.2
  * Requires at least: 5.0
  * Tested Up To: 6.0
  * Author: Byvex Team
@@ -124,6 +124,7 @@ class EasyQRCodeGenerator
                 // buttons
                 'download' => 'true',
                 'download-btn-text' => 'Download',
+                'download-file-name' => $this->plugin_slug . '-',
                 'print' => 'true',
                 'print-btn-text' => 'Print QR Code',
             ),
@@ -212,6 +213,7 @@ class EasyQRCodeGenerator
                             document.querySelector('#easy-qrcode-id-<?php echo esc_js($qr_id); ?> canvas').style.display = 'none'
                             imgEL.setAttribute('id', 'easy-qrcode-img-<?php echo esc_js($qr_id); ?>');
                             imgEL.setAttribute('alt', 'Scan Me');
+                            imgEL.setAttribute('data-file-name', '<?php echo esc_js($vars['download-file-name']); ?>');
                         } else {
                             console.warn('Image used in QR Code is not hosted on same domain, can not download or print.')
                             var easy_qrcode_btns = document.getElementById('easy-qrcode-btns-<?php echo esc_js($qr_id); ?>')
@@ -427,6 +429,11 @@ class EasyQRCodeGenerator
                             <td>download-btn-text</td>
                             <td>Download Button Text</td>
                             <td>[easy-qrcode download-btn-text="Download"]Your Content Here.[/easy-qrcode]</td>
+                        </tr>
+                        <tr>
+                            <td>download-file-name</td>
+                            <td>Download File Name</td>
+                            <td>[easy-qrcode download-file-name="ByvexTech"]Your Content Here.[/easy-qrcode]</td>
                         </tr>
                         <tr>
                             <td>print</td>
